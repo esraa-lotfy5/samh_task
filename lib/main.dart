@@ -1,7 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:samh_task/core/constants/app_globals.dart';
 import 'package:samh_task/core/managers/shared_pref_manager.dart';
+import 'package:samh_task/core/managers/theme_manager.dart';
 import 'package:samh_task/core/utils/localization_util.dart';
 
 void main() async {
@@ -27,13 +29,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      scaffoldMessengerKey: AppGlobals.scaffoldMessengerKey,
       localizationsDelegates: [...context.localizationDelegates],
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: ThemeManager.getThemeData(),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }

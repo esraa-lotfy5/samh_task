@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:samh_task/generated/locale_keys.g.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesManager {
@@ -20,9 +22,7 @@ class SharedPreferencesManager {
     } else if (value is String) {
       return await _instance.setString(key, value);
     } else {
-      throw Exception(
-          // LocaleKeys.invalid_type.tr(),
-          );
+      throw Exception(LocaleKeys.invalidType.tr());
     }
   }
 
