@@ -14,7 +14,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(LocaleKeys.Home.tr()),
+      child: Text(LocaleKeys.home.tr()),
     );
   }
 }

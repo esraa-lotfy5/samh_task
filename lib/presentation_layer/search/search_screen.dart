@@ -14,7 +14,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(LocaleKeys.Search.tr()),
+      child: Text(LocaleKeys.search.tr()),
     );
   }
 }

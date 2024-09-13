@@ -1,5 +1,7 @@
 {
   "invalidType": "Invalid type",
-  "Home": "Home",
-  "Search": "Search"
+  "home": "Home",
+  "search": "Search",
+  "select": "Select",
+  "language": "Language"
 }

@@ -2,13 +2,16 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:samh_task/core/constants/app_colors.dart';
+import 'package:samh_task/core/constants/app_constants.dart';
 import 'package:samh_task/core/constants/app_images.dart';
 import 'package:samh_task/core/managers/text_style_manager.dart';
+import 'package:samh_task/core/utils/localization_util.dart';
 import 'package:samh_task/generated/locale_keys.g.dart';
 import 'package:samh_task/presentation_layer/flight/flight_screen.dart';
 import 'package:samh_task/presentation_layer/home/home_screen.dart';
 import 'package:samh_task/presentation_layer/screens/tabs/tabs_view_model.dart';
 import 'package:samh_task/presentation_layer/search/search_screen.dart';
+import 'package:samh_task/presentation_layer/widgets/common/custom_drop_down_menu.dart';
 import 'package:samh_task/presentation_layer/widgets/common/custom_image.dart';
 
 class TabsScreen extends ConsumerWidget {
@@ -26,6 +29,40 @@ class TabsScreen extends ConsumerWidget {
 
     return Scaffold(
       body: _children[selectedIndex],
+      drawer: Drawer(
+        backgroundColor: AppColors.white,
+        clipBehavior: Clip.hardEdge,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height: 80.0),
+            Container(
+              height: 50,
+              padding: const EdgeInsetsDirectional.symmetric(vertical: 5, horizontal: 15),
+              decoration: BoxDecoration(
+                color: AppColors.primary,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: CustomImage.svg(
+                src: AppSvg.icLogo,
+                isMatchingTextDirection: false,
+                // height: 30,
+              ),
+            ),
+            const SizedBox(height: 20.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomDropDownMenu(
+                items: const [AppConstants.arLangCode, AppConstants.enLangCode],
+                labelText: LocaleKeys.language.tr(),
+                onChange: (value) => _changeLanguage(context: context, ref: ref, langCode: value),
+                selectedValue: LocalizationUtil.getLanguage(),
+                isExpanded: true,
+              ),
+            ),
+          ],
+        ),
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: InkWell(
         onTap: () => _onBottomNavigationBarTapped(ref, 1),
@@ -34,10 +71,7 @@ class TabsScreen extends ConsumerWidget {
           height: 60,
           width: 60,
           decoration: const BoxDecoration(color: AppColors.primary, shape: BoxShape.circle),
-          child: CustomImage.svg(
-            src: AppSvg.icFlight,
-            isMatchingTextDirection: false,
-          ),
+          child: CustomImage.svg(src: AppSvg.icFlight, isMatchingTextDirection: false),
         ),
       ),
       bottomNavigationBar: BottomAppBar(
@@ -64,7 +98,7 @@ class TabsScreen extends ConsumerWidget {
                       ),
                     ),
                     Text(
-                      LocaleKeys.Home.tr(),
+                      LocaleKeys.home.tr(),
                       style: TextStyleManager.regular(fontSize: 12.0, color: AppColors.white),
                     ),
                   ],
@@ -87,7 +121,7 @@ class TabsScreen extends ConsumerWidget {
                       ),
                     ),
                     Text(
-                      LocaleKeys.Search.tr(),
+                      LocaleKeys.search.tr(),
                       style: TextStyleManager.regular(fontSize: 12.0, color: AppColors.white),
                     ),
                   ],
@@ -102,5 +136,15 @@ class TabsScreen extends ConsumerWidget {
 
   void _onBottomNavigationBarTapped(WidgetRef ref, int index) {
     ref.read(TabsViewModel.bottomTabsIndex.notifier).setIndex(index);
+  }
+
+  void _changeLanguage({required WidgetRef ref, required BuildContext context, required String langCode}) {
+    context.setLocale(
+      Locale(
+        langCode,
+        langCode == AppConstants.arLangCode ? AppConstants.arCountryCode : AppConstants.enCountryCode,
+      ),
+    );
+    LocalizationUtil.setLanguageCode(ref, langCode);
   }
 }
