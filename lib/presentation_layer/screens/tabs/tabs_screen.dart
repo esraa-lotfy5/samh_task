@@ -1,0 +1,106 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:samh_task/core/constants/app_colors.dart';
+import 'package:samh_task/core/constants/app_images.dart';
+import 'package:samh_task/core/managers/text_style_manager.dart';
+import 'package:samh_task/generated/locale_keys.g.dart';
+import 'package:samh_task/presentation_layer/flight/flight_screen.dart';
+import 'package:samh_task/presentation_layer/home/home_screen.dart';
+import 'package:samh_task/presentation_layer/screens/tabs/tabs_view_model.dart';
+import 'package:samh_task/presentation_layer/search/search_screen.dart';
+import 'package:samh_task/presentation_layer/widgets/common/custom_image.dart';
+
+class TabsScreen extends ConsumerWidget {
+  TabsScreen({super.key});
+
+  final _children = [
+    const HomeScreen(),
+    const FlightScreen(),
+    const SearchScreen(),
+  ];
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedIndex = ref.watch(TabsViewModel.bottomTabsIndex);
+
+    return Scaffold(
+      body: _children[selectedIndex],
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: InkWell(
+        onTap: () => _onBottomNavigationBarTapped(ref, 1),
+        child: Container(
+          padding: const EdgeInsets.all(12),
+          height: 60,
+          width: 60,
+          decoration: const BoxDecoration(color: AppColors.primary, shape: BoxShape.circle),
+          child: CustomImage.svg(
+            src: AppSvg.icFlight,
+            isMatchingTextDirection: false,
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        height: 65.0,
+        notchMargin: 8.0,
+        color: AppColors.primary,
+        shape: const CircularNotchedRectangle(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            InkWell(
+              onTap: () => _onBottomNavigationBarTapped(ref, 0),
+              child: SizedBox(
+                width: 80,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 4),
+                      child: CustomImage.svg(
+                        src: AppSvg.icHome,
+                        height: 20,
+                        isMatchingTextDirection: false,
+                      ),
+                    ),
+                    Text(
+                      LocaleKeys.Home.tr(),
+                      style: TextStyleManager.regular(fontSize: 12.0, color: AppColors.white),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(width: 60),
+            InkWell(
+              onTap: () => _onBottomNavigationBarTapped(ref, 2),
+              child: SizedBox(
+                width: 80,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 4),
+                      child: CustomImage.svg(
+                        src: AppSvg.icSearch,
+                        height: 20,
+                        isMatchingTextDirection: false,
+                      ),
+                    ),
+                    Text(
+                      LocaleKeys.Search.tr(),
+                      style: TextStyleManager.regular(fontSize: 12.0, color: AppColors.white),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _onBottomNavigationBarTapped(WidgetRef ref, int index) {
+    ref.read(TabsViewModel.bottomTabsIndex.notifier).setIndex(index);
+  }
+}

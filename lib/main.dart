@@ -5,6 +5,7 @@ import 'package:samh_task/core/constants/app_globals.dart';
 import 'package:samh_task/core/managers/shared_pref_manager.dart';
 import 'package:samh_task/core/managers/theme_manager.dart';
 import 'package:samh_task/core/utils/localization_util.dart';
+import 'package:samh_task/presentation_layer/screens/tabs/tabs_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,14 +29,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Travel Agency',
       debugShowCheckedModeBanner: false,
       scaffoldMessengerKey: AppGlobals.scaffoldMessengerKey,
       localizationsDelegates: [...context.localizationDelegates],
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       theme: ThemeManager.getThemeData(),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: TabsScreen(),
     );
   }
 }

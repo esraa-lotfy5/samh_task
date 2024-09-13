@@ -2,5 +2,7 @@
 
 abstract class  LocaleKeys {
   static const invalidType = 'invalidType';
+  static const Home = 'Home';
+  static const Search = 'Search';
 
 }
