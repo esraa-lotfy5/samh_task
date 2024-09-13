@@ -10,8 +10,6 @@ class AppConstants {
   static const String arLocale = '${arLangCode}_$arCountryCode';
   static const String enLocale = '${enLangCode}_$enCountryCode';
 
-  //shared preferences keys
-  // static const String accessToken = 'access_token';
-  // static const String refreshToken = 'refresh_token';
-  // static const String currentUserId = 'id';
+  //sizes
+  static double get kNotchHeight => 20.0;
 }

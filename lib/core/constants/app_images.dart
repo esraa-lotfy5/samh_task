@@ -7,4 +7,14 @@ class AppSvg {
   static String get icSearch => '$_baseUri/ic_search.svg';
   static String get icFlight => '$_baseUri/ic_flight.svg';
   static String get icLogo => '$_baseUri/ic_logo.svg';
+  static String get worldMap => '$_baseUri/world_map.svg';
+}
+
+class AppPng {
+  AppPng._();
+
+  static const String _baseUri = 'assets/images/png';
+
+  static const String icBookFlightBackground = '$_baseUri/ic_book_flight_background.png';
+  static const String icSearchResultBackground = '$_baseUri/ic_search_result_background.png';
 }
