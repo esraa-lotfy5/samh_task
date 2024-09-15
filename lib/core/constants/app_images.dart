@@ -8,6 +8,8 @@ class AppSvg {
   static String get icFlight => '$_baseUri/ic_flight.svg';
   static String get icLogo => '$_baseUri/ic_logo.svg';
   static String get worldMap => '$_baseUri/world_map.svg';
+  static String get icPlan => '$_baseUri/ic_plan.svg';
+  static String get icConverter => '$_baseUri/ic_converter.svg';
 }
 
 class AppPng {

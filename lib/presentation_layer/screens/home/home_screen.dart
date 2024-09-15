@@ -42,7 +42,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   /// Book Your Flight text
                   Text(
                     LocaleKeys.bookYourFlight.tr(),
-                    style: TextStyleManager.bold(fontSize: 34.0, color: AppColors.white),
+                    style: TextStyleManager.bold(size: 34.0, color: AppColors.white),
                   ),
 
                   /// Tabs

@@ -99,7 +99,7 @@ class TabsScreen extends ConsumerWidget {
                     ),
                     Text(
                       LocaleKeys.home.tr(),
-                      style: TextStyleManager.regular(fontSize: 12.0, color: AppColors.white),
+                      style: TextStyleManager.regular(size: 12.0, color: AppColors.white),
                     ),
                   ],
                 ),
@@ -122,7 +122,7 @@ class TabsScreen extends ConsumerWidget {
                     ),
                     Text(
                       LocaleKeys.search.tr(),
-                      style: TextStyleManager.regular(fontSize: 12.0, color: AppColors.white),
+                      style: TextStyleManager.regular(size: 12.0, color: AppColors.white),
                     ),
                   ],
                 ),

@@ -41,7 +41,7 @@ class CustomDropDownMenu extends StatelessWidget {
               hint: Text(
                 selectedValue ?? hintText ?? LocaleKeys.select.tr(),
                 style: TextStyleManager.semiBold(
-                  fontSize: itemFontSize,
+                  size: itemFontSize,
                   color: AppColors.primary,
                 ),
               ),
@@ -64,13 +64,13 @@ class CustomDropDownMenu extends StatelessWidget {
               //   ),
               // ),
               // valueListenable: valueListenable,
-              style: TextStyleManager.semiBold(fontSize: 14.0),
+              style: TextStyleManager.semiBold(size: 14.0),
               onChanged: onChange,
               buttonStyleData: ButtonStyleData(
                 padding: const EdgeInsetsDirectional.symmetric(horizontal: 10.0, vertical: 5.0),
                 height: 50,
                 decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.grayishRedOpacity30, width: 1.0),
+                  border: Border.all(color: AppColors.grayishRedOpacity38, width: 1.0),
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
@@ -95,7 +95,7 @@ class CustomDropDownMenu extends StatelessWidget {
             color: AppColors.white,
             child: Text(
               labelText,
-              style: TextStyleManager.medium(fontSize: 12.0, color: AppColors.grayishRed),
+              style: TextStyleManager.medium(size: 12.0, color: AppColors.grayishRed),
             ),
           ),
         ),

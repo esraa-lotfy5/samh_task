@@ -1,7 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:samh_task/generated/locale_keys.g.dart';
 
 class FlightScreen extends ConsumerStatefulWidget {
   const FlightScreen({super.key});

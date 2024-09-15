@@ -10,7 +10,8 @@ class AppColors {
   static const Color veryLightGray = Color.fromRGBO(244, 244, 244, 1);
   static const Color lightGrey = Color.fromRGBO(183, 161, 165, 1);
   static const Color grayishRed = Color.fromRGBO(181, 178, 178, 1);
-  static const Color grayishRedOpacity30 = Color.fromRGBO(181, 178, 178, 0.38);
+  static const Color grayishRedOpacity38 = Color.fromRGBO(181, 178, 178, 0.38);
+  static const Color veryDarkVioletOpacity35 = Color.fromRGBO(20, 0, 55, 0.35);
   static const Color transparent = Colors.transparent;
   static const Color scaffoldBackgroundColor = veryLightGray;
 }

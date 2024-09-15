@@ -37,6 +37,6 @@ class ThemeManager {
         selectedColor: AppColors.secondary,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
         showCheckmark: false,
-        labelStyle: TextStyleManager.medium(fontSize: 11, color: AppColors.white),
+        labelStyle: TextStyleManager.medium(size: 11, color: AppColors.white),
       );
 }

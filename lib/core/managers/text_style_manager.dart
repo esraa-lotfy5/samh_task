@@ -21,24 +21,24 @@ class TextStyleManager {
         height: height ?? 1.2,
       );
 
-  static TextStyle light({double? fontSize, Color? color, TextDecoration? textDecoration}) =>
-      _base(fontWeight: FontWeight.w300, size: fontSize, color: color, textDecoration: textDecoration);
+  static TextStyle light({double? size, Color? color, TextDecoration? textDecoration}) =>
+      _base(fontWeight: FontWeight.w300, size: size, color: color, textDecoration: textDecoration);
 
-  static TextStyle regular({double? fontSize, Color? color, TextDecoration? textDecoration, double? height}) =>
-      _base(fontWeight: FontWeight.w400, size: fontSize, color: color, textDecoration: textDecoration, height: height);
+  static TextStyle regular({double? size, Color? color, TextDecoration? textDecoration, double? height}) =>
+      _base(fontWeight: FontWeight.w400, size: size, color: color, textDecoration: textDecoration, height: height);
 
-  static TextStyle medium({double? fontSize, Color? color, TextDecoration? textDecoration}) =>
-      _base(fontWeight: FontWeight.w500, size: fontSize, color: color, textDecoration: textDecoration);
+  static TextStyle medium({double? size, Color? color, TextDecoration? textDecoration}) =>
+      _base(fontWeight: FontWeight.w500, size: size, color: color, textDecoration: textDecoration);
 
-  static TextStyle semiBold({double? fontSize, Color? color, TextDecoration? textDecoration}) =>
-      _base(fontWeight: FontWeight.w600, size: fontSize, color: color, textDecoration: textDecoration);
+  static TextStyle semiBold({double? size, Color? color, TextDecoration? textDecoration}) =>
+      _base(fontWeight: FontWeight.w600, size: size, color: color, textDecoration: textDecoration);
 
-  static TextStyle bold({double? fontSize, Color? color, TextDecoration? textDecoration}) =>
-      _base(fontWeight: FontWeight.w700, size: fontSize, color: color, textDecoration: textDecoration);
+  static TextStyle bold({double? size, Color? color, TextDecoration? textDecoration}) =>
+      _base(fontWeight: FontWeight.w700, size: size, color: color, textDecoration: textDecoration);
 
-  static TextStyle extraBold({double? fontSize, Color? color, TextDecoration? textDecoration}) =>
-      _base(fontWeight: FontWeight.w800, size: fontSize, color: color, textDecoration: textDecoration);
+  static TextStyle extraBold({double? size, Color? color, TextDecoration? textDecoration}) =>
+      _base(fontWeight: FontWeight.w800, size: size, color: color, textDecoration: textDecoration);
 
-  static TextStyle black({double? fontSize, Color? color, TextDecoration? textDecoration}) =>
-      _base(fontWeight: FontWeight.w900, size: fontSize, color: color, textDecoration: textDecoration);
+  static TextStyle black({double? size, Color? color, TextDecoration? textDecoration}) =>
+      _base(fontWeight: FontWeight.w900, size: size, color: color, textDecoration: textDecoration);
 }
