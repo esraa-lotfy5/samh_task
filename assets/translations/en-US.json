@@ -18,5 +18,6 @@
   "business": "Business",
   "first": "First",
   "adult": "Adult",
-  "fillForm": "Please fill the form fields."
+  "fillForm": "Please fill the form fields.",
+  "destinationUnknown": "destination unknown"
 }

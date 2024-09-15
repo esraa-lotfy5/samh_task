@@ -21,5 +21,6 @@ abstract class  LocaleKeys {
   static const first = 'first';
   static const adult = 'adult';
   static const fillForm = 'fillForm';
+  static const destinationUnknown = 'destinationUnknown';
 
 }

@@ -4,8 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:samh_task/core/constants/app_globals.dart';
 import 'package:samh_task/core/managers/shared_pref_manager.dart';
 import 'package:samh_task/core/managers/theme_manager.dart';
+import 'package:samh_task/core/routes/app_routes.dart';
+import 'package:samh_task/core/routes/routes_names.dart';
 import 'package:samh_task/core/utils/localization_util.dart';
-import 'package:samh_task/presentation_layer/screens/tabs/tabs_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,7 +37,9 @@ class MyApp extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       theme: ThemeManager.getThemeData(),
-      home: TabsScreen(),
+      onGenerateRoute: AppRoutes().generateRoute,
+      navigatorKey: AppGlobals.navigatorKey,
+      initialRoute: RoutesNames.tabsScreen,
     );
   }
 }
