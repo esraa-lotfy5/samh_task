@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:samh_task/core/constants/app_colors.dart';
 import 'package:samh_task/core/enums/flight_class_type.dart';
 import 'package:samh_task/core/extensions/context_extensions.dart';
+import 'package:samh_task/core/routes/route_methods.dart';
 import 'package:samh_task/generated/locale_keys.g.dart';
 import 'package:samh_task/presentation_layer/screens/home/home_view_model.dart';
 import 'package:samh_task/presentation_layer/widgets/common/custom_button.dart';
@@ -66,7 +67,7 @@ class _BookingFormState extends ConsumerState<BookingForm> {
               title: LocaleKeys.searchFlights.tr(),
               onPressed: () {
                 if (_validateForm(ref)) {
-                  print("Validated");
+                  RouteMethods.navigateToSearchResultsScreen();
                 } else {
                   context.showNativeSnackBar(text: LocaleKeys.fillForm.tr());
                 }

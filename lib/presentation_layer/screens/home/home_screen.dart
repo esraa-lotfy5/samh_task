@@ -21,51 +21,58 @@ class HomeScreen extends ConsumerStatefulWidget {
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        const Positioned.fill(
-          child: CustomBackgroundHeader(
-            height: 294.0,
-            image: BackgroundImage.bookFlight,
-            showLogo: true,
+    return Scaffold(
+      body: Stack(
+        children: [
+          const Positioned.fill(
+            child: CustomBackgroundHeader(
+              height: 294.0,
+              image: BackgroundImage.bookFlight,
+              showLogo: true,
+            ),
           ),
-        ),
-        Positioned.fill(
-          top: AppConstants.kNotchHeight + 110.0,
-          child: Scaffold(
-            backgroundColor: AppColors.transparent,
-            body: Padding(
-              padding: const EdgeInsetsDirectional.symmetric(horizontal: 21.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  /// Book Your Flight text
-                  Text(
-                    LocaleKeys.bookYourFlight.tr(),
-                    style: TextStyleManager.bold(size: 34.0, color: AppColors.white),
-                  ),
-
-                  /// Tabs
-                  CustomTabBar(
-                    tabs: [
-                      Tab(text: LocaleKeys.roundTrip.tr()),
-                      Tab(text: LocaleKeys.oneWay.tr()),
-                      Tab(text: LocaleKeys.multiCity.tr())
-                    ],
-                    onTap: _updateTabsIndex,
-                  ),
-                  const SizedBox(height: 10.0),
-                  const Expanded(
-                    child: SingleChildScrollView(
-                      child: BookingForm(),
+          Positioned.fill(
+            top: AppConstants.kNotchHeight + 110.0,
+            child: Scaffold(
+              backgroundColor: AppColors.transparent,
+              body: Padding(
+                padding: const EdgeInsetsDirectional.symmetric(horizontal: 21.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    /// Book Your Flight text
+                    Align(
+                      alignment: context.locale.countryCode == AppConstants.arCountryCode
+                          ? AlignmentDirectional.centerEnd
+                          : AlignmentDirectional.centerStart,
+                      child: Text(
+                        LocaleKeys.bookYourFlight.tr(),
+                        style: TextStyleManager.bold(size: 34.0, color: AppColors.white),
+                      ),
                     ),
-                  ),
-                ],
+
+                    /// Tabs
+                    CustomTabBar(
+                      tabs: [
+                        Tab(text: LocaleKeys.roundTrip.tr()),
+                        Tab(text: LocaleKeys.oneWay.tr()),
+                        Tab(text: LocaleKeys.multiCity.tr())
+                      ],
+                      onTap: _updateTabsIndex,
+                    ),
+                    const SizedBox(height: 10.0),
+                    const Expanded(
+                      child: SingleChildScrollView(
+                        child: BookingForm(),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

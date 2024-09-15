@@ -22,5 +22,13 @@ abstract class  LocaleKeys {
   static const adult = 'adult';
   static const fillForm = 'fillForm';
   static const destinationUnknown = 'destinationUnknown';
+  static const searchResult = 'searchResult';
+  static const viewMore = 'viewMore';
+  static const flightsAvailable = 'flightsAvailable';
+  static const hour = 'hour';
+  static const min = 'min';
+  static const arrive = 'arrive';
+  static const depart = 'depart';
+  static const noAvailableResults = 'noAvailableResults';
 
 }

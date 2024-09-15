@@ -12,6 +12,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPreferencesManager.init();
   await EasyLocalization.ensureInitialized();
+  AppGlobals.registerDependencies();
 
   runApp(
     EasyLocalization(
@@ -32,11 +33,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Travel Agency',
       debugShowCheckedModeBanner: false,
+      theme: ThemeManager.getThemeData(),
       scaffoldMessengerKey: AppGlobals.scaffoldMessengerKey,
       localizationsDelegates: [...context.localizationDelegates],
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      theme: ThemeManager.getThemeData(),
       onGenerateRoute: AppRoutes().generateRoute,
       navigatorKey: AppGlobals.navigatorKey,
       initialRoute: RoutesNames.tabsScreen,

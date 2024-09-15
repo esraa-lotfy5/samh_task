@@ -19,5 +19,13 @@
   "first": "الأولي",
   "adult": "بالغ",
   "fillForm": "الرجاء ملء حقول النموذج.",
-  "destinationUnknown": "الوجهة مجهولة"
+  "destinationUnknown": "الوجهة مجهولة",
+  "searchResult": "نتائج البحث",
+  "viewMore": "عرض المزيد",
+  "flightsAvailable": "{} رحلات متاحة",
+  "hour": "{}ساعة",
+  "min": "{}دقيقة",
+  "arrive": "الوصول",
+  "depart": "المغادرة",
+  "noAvailableResults": "لا يوجد نتائج متوفرة"
 }

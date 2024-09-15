@@ -12,4 +12,8 @@ class AppConstants {
 
   //sizes
   static double get kNotchHeight => 20.0;
+
+  //shared preferences keys
+  static const String accessToken = 'access_token';
+  static const String refreshToken = 'refresh_token';
 }

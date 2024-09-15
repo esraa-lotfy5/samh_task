@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:samh_task/core/constants/app_colors.dart';
 import 'package:samh_task/core/managers/text_style_manager.dart';
 
-class CustomTextFormField extends StatelessWidget {
+class CustomTextFormField extends StatefulWidget {
   final String title;
   final Color? backgroundColor;
   final double? width;
@@ -62,55 +62,60 @@ class CustomTextFormField extends StatelessWidget {
   });
 
   @override
+  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+}
+
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
+  @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
           /// Add margin to handle label position as design
           margin: const EdgeInsetsDirectional.only(top: 8.0),
-          width: width ?? MediaQuery.of(context).size.width,
-          height: height,
+          width: widget.width ?? MediaQuery.of(context).size.width,
+          height: widget.height,
           child: TextFormField(
             cursorColor: AppColors.grayishRedOpacity38,
-            autofocus: isFocus,
-            focusNode: focusNode,
-            maxLines: maxLines,
-            controller: controller,
-            enabled: enabled,
-            obscureText: obscureText,
-            keyboardType: keyboardType ?? TextInputType.text,
-            style: TextStyleManager.semiBold(color: color, size: 16),
+            autofocus: widget.isFocus,
+            focusNode: widget.focusNode,
+            maxLines: widget.maxLines,
+            controller: widget.controller,
+            enabled: widget.enabled,
+            obscureText: widget.obscureText,
+            keyboardType: widget.keyboardType ?? TextInputType.text,
+            style: TextStyleManager.semiBold(color: widget.color, size: 16),
             autocorrect: false,
             decoration: InputDecoration(
-              errorMaxLines: errorMaxLines,
+              errorMaxLines: widget.errorMaxLines,
               errorStyle: const TextStyle(color: Colors.red),
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: underlineColor),
-                borderRadius: BorderRadius.circular(borderRadius),
+                borderSide: BorderSide(color: widget.underlineColor),
+                borderRadius: BorderRadius.circular(widget.borderRadius),
               ),
               disabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: underlineColor),
-                borderRadius: BorderRadius.circular(borderRadius),
+                borderSide: BorderSide(color: widget.underlineColor),
+                borderRadius: BorderRadius.circular(widget.borderRadius),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: underlineColor),
-                borderRadius: BorderRadius.circular(borderRadius),
+                borderSide: BorderSide(color: widget.underlineColor),
+                borderRadius: BorderRadius.circular(widget.borderRadius),
               ),
-              suffix: suffix,
-              suffixText: suffixText,
+              suffix: widget.suffix,
+              suffixText: widget.suffixText,
               suffixStyle: TextStyleManager.medium(size: 12.0, color: AppColors.veryDarkVioletOpacity35),
               prefixIcon: Padding(
-                padding: EdgeInsetsDirectional.symmetric(horizontal: prefixHorizontalPadding),
-                child: prefix,
+                padding: EdgeInsetsDirectional.symmetric(horizontal: widget.prefixHorizontalPadding),
+                child: widget.prefix,
               ),
               prefixIconConstraints: const BoxConstraints(maxWidth: 130),
             ),
             onChanged: (val) {
-              if (onChange != null) onChange!();
+              if (widget.onChange != null) widget.onChange!();
               log("onFieldSubmitted $val");
             },
-            validator: (val) => validator != null ? validator!(val) : null,
-            textInputAction: doneButton,
+            validator: (val) => widget.validator != null ? widget.validator!(val) : null,
+            textInputAction: widget.doneButton,
           ),
         ),
 
@@ -121,7 +126,7 @@ class CustomTextFormField extends StatelessWidget {
             padding: const EdgeInsetsDirectional.symmetric(horizontal: 4.0),
             color: AppColors.white,
             child: Text(
-              title,
+              widget.title,
               style: TextStyleManager.medium(size: 12.0, color: AppColors.grayishRed),
             ),
           ),

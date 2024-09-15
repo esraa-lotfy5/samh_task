@@ -10,6 +10,7 @@ class AppSvg {
   static String get worldMap => '$_baseUri/world_map.svg';
   static String get icPlan => '$_baseUri/ic_plan.svg';
   static String get icConverter => '$_baseUri/ic_converter.svg';
+  static String get searchCardBackground => '$_baseUri/search_card_background.svg';
 }
 
 class AppPng {

@@ -50,7 +50,6 @@ class _DateWidgetState extends ConsumerState<ConsumerStatefulWidget> {
       },
       context,
       initialDate: ref.read(HomeViewModel.dateBookingProvider),
-      lastDate: DateTime.now(),
     );
   }
 
@@ -58,8 +57,6 @@ class _DateWidgetState extends ConsumerState<ConsumerStatefulWidget> {
     Function(DateTime) onDatePicked,
     BuildContext context, {
     DateTime? initialDate,
-    DateTime? firstDate,
-    DateTime? lastDate,
   }) {
     return showCupertinoModalPopup<void>(
       context: context,
@@ -78,12 +75,8 @@ class _DateWidgetState extends ConsumerState<ConsumerStatefulWidget> {
             initialDateTime: initialDate ?? DateTime.now(),
             mode: CupertinoDatePickerMode.date,
             use24hFormat: true,
-            maximumDate: DateTime.now(),
-            minimumDate: firstDate != null ? DateTime(firstDate.year, firstDate.month, firstDate.day) : DateTime(1900),
             // This is called when the user changes the date.
-            onDateTimeChanged: (DateTime newDate) {
-              onDatePicked(newDate);
-            },
+            onDateTimeChanged: (DateTime newDate) => onDatePicked(newDate),
           ),
         ),
       ),

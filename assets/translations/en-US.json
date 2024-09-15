@@ -19,5 +19,13 @@
   "first": "First",
   "adult": "Adult",
   "fillForm": "Please fill the form fields.",
-  "destinationUnknown": "destination unknown"
+  "destinationUnknown": "destination unknown",
+  "searchResult": "Search Result",
+  "viewMore": "View More",
+  "flightsAvailable": "{} Flights Available",
+  "hour": "{}H",
+  "min": "{}M",
+  "arrive": "Arrive",
+  "depart": "Depart",
+  "noAvailableResults": "No available results"
 }
