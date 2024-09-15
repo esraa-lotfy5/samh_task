@@ -21,6 +21,13 @@ class _FromToWidgetState extends ConsumerState<FromToWidget> {
   final _toController = TextEditingController();
 
   @override
+  void dispose() {
+    _fromController.dispose();
+    _toController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Stack(
       children: [

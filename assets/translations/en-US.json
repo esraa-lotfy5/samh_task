@@ -13,5 +13,10 @@
   "date": "Date",
   "travellers": "Travellers",
   "classText": "Class",
-  "searchFlights": "Search Flights"
+  "searchFlights": "Search Flights",
+  "economy": "Economy",
+  "business": "Business",
+  "first": "First",
+  "adult": "Adult",
+  "fillForm": "Please fill the form fields."
 }

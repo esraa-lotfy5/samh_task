@@ -33,7 +33,7 @@ class CustomBackgroundHeader extends StatelessWidget {
         PositionedDirectional(
           top: 36.0 + AppConstants.kNotchHeight,
           end: 61.0,
-          child: CustomImage.asset(src: image.imagePath),
+          child: CustomImage.asset(src: image.imagePath, isMatchingTextDirection: false),
         ),
         if (showLogo)
           PositionedDirectional(

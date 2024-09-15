@@ -13,5 +13,10 @@
   "date": "التاريخ",
   "travellers": "المسافرون",
   "classText": "الدرجة",
-  "searchFlights": "البحث عن الرحلات الجوية"
+  "searchFlights": "البحث عن الرحلات الجوية",
+  "economy": "اقتصادي",
+  "business": "الأعمال",
+  "first": "الأولي",
+  "adult": "بالغ",
+  "fillForm": "الرجاء ملء حقول النموذج."
 }

@@ -16,5 +16,10 @@ abstract class  LocaleKeys {
   static const travellers = 'travellers';
   static const classText = 'classText';
   static const searchFlights = 'searchFlights';
+  static const economy = 'economy';
+  static const business = 'business';
+  static const first = 'first';
+  static const adult = 'adult';
+  static const fillForm = 'fillForm';
 
 }
