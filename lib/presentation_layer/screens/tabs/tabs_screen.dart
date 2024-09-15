@@ -7,10 +7,10 @@ import 'package:samh_task/core/constants/app_images.dart';
 import 'package:samh_task/core/managers/text_style_manager.dart';
 import 'package:samh_task/core/utils/localization_util.dart';
 import 'package:samh_task/generated/locale_keys.g.dart';
-import 'package:samh_task/presentation_layer/flight/flight_screen.dart';
-import 'package:samh_task/presentation_layer/home/home_screen.dart';
+import 'package:samh_task/presentation_layer/screens/flight/flight_screen.dart';
+import 'package:samh_task/presentation_layer/screens/home/home_screen.dart';
 import 'package:samh_task/presentation_layer/screens/tabs/tabs_view_model.dart';
-import 'package:samh_task/presentation_layer/search/search_screen.dart';
+import 'package:samh_task/presentation_layer/screens/search/search_screen.dart';
 import 'package:samh_task/presentation_layer/widgets/common/custom_drop_down_menu.dart';
 import 'package:samh_task/presentation_layer/widgets/common/custom_image.dart';
 
@@ -67,7 +67,7 @@ class TabsScreen extends ConsumerWidget {
       floatingActionButton: InkWell(
         onTap: () => _onBottomNavigationBarTapped(ref, 1),
         child: Container(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsetsDirectional.all(12),
           height: 60,
           width: 60,
           decoration: const BoxDecoration(color: AppColors.primary, shape: BoxShape.circle),
@@ -135,7 +135,7 @@ class TabsScreen extends ConsumerWidget {
   }
 
   void _onBottomNavigationBarTapped(WidgetRef ref, int index) {
-    ref.read(TabsViewModel.bottomTabsIndex.notifier).setIndex(index);
+    ref.read(TabsViewModel.bottomTabsIndex.notifier).state = index;
   }
 
   void _changeLanguage({required WidgetRef ref, required BuildContext context, required String langCode}) {

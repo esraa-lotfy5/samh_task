@@ -3,5 +3,15 @@
   "home": "الصفحة الرئيسية",
   "search": "البحث",
   "select": "اختار",
-  "language": "اللغة"
+  "language": "اللغة",
+  "bookYourFlight": "احجز رحلتك",
+  "roundTrip": "رحلة ذهاب وعودة",
+  "oneWay": "اتجاه واحد",
+  "multiCity": "متعدد المدن",
+  "from": "من",
+  "to": "إلى",
+  "date": "التاريخ",
+  "travellers": "المسافرون",
+  "classText": "الدرجة",
+  "searchFlights": "البحث عن الرحلات الجوية"
 }

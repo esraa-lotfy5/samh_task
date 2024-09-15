@@ -3,5 +3,15 @@
   "home": "Home",
   "search": "Search",
   "select": "Select",
-  "language": "Language"
+  "language": "Language",
+  "bookYourFlight": "Book Your\nFlight",
+  "roundTrip": "Round Trip",
+  "oneWay": "One-Way",
+  "multiCity": "Multi City",
+  "from": "From",
+  "to": "To",
+  "date": "Date",
+  "travellers": "Travellers",
+  "classText": "Class",
+  "searchFlights": "Search Flights"
 }

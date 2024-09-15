@@ -6,5 +6,15 @@ abstract class  LocaleKeys {
   static const search = 'search';
   static const select = 'select';
   static const language = 'language';
+  static const bookYourFlight = 'bookYourFlight';
+  static const roundTrip = 'roundTrip';
+  static const oneWay = 'oneWay';
+  static const multiCity = 'multiCity';
+  static const from = 'from';
+  static const to = 'to';
+  static const date = 'date';
+  static const travellers = 'travellers';
+  static const classText = 'classText';
+  static const searchFlights = 'searchFlights';
 
 }

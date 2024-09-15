@@ -28,7 +28,7 @@ class CustomBackgroundHeader extends StatelessWidget {
         PositionedDirectional(
           top: AppConstants.kNotchHeight,
           start: 36.0,
-          child: CustomImage.svg(src: AppSvg.worldMap),
+          child: CustomImage.svg(src: AppSvg.worldMap, isMatchingTextDirection: false),
         ),
         PositionedDirectional(
           top: 36.0 + AppConstants.kNotchHeight,
@@ -39,7 +39,7 @@ class CustomBackgroundHeader extends StatelessWidget {
           PositionedDirectional(
             top: 25.0 + AppConstants.kNotchHeight,
             start: (MediaQuery.of(context).size.width - 117.0) / 2, // 117.0 is logo width
-            child: CustomImage.svg(src: AppSvg.icLogo),
+            child: CustomImage.svg(src: AppSvg.icLogo, isMatchingTextDirection: false),
           ),
       ],
     );
